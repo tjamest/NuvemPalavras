@@ -1,0 +1,81 @@
+#nuvem de palavras 1
+import turtle
+t=turtle.Turtle()
+i = 0
+texto = {"palavra": "nada" ,"qtd" : "0"  }
+lista_cores = ['red','green','blue','yellow','magenta','cyan','pink','gray','black','brown']
+musica = open("musica.txt",'r')
+for linha in musica:
+    valores = linha.split()
+    for i in range(len(valores)):
+        if(len(valores[i]) >= 4):
+            print(valores[i])
+    print(texto)
+    linha = musica.readline()
+musica.close()
+
+
+
+
+
+def vertical(t,palavra,cor,x,y,tamfonte):     
+    t.up()
+    t.goto(x,y)
+    t.pencolor(cor)
+    fonte1=('calibri',tamfonte,'bold')
+    t.down()
+    for i in range(len(palavra)):
+        t.write(palavra[i],False,'center',fonte1)
+        y=y-tamfonte
+        t.up()
+        t.goto(x,y)
+        t.down()
+    fonte1=('calibri',34,'bold')
+    t.pencolor('red')
+    t.write('paz',False,'center',fonte1)
+    t.up()
+    t.goto(100,-100)
+    fonte1=('calibri',32,'bold')
+    t.pencolor('green')
+    t.down()
+    t.write('saúde',False,'center',fonte1)
+    t.up()
+    t.goto(-100,100)
+    fonte1=('calibri',30,'bold')
+    t.pencolor('blue')
+    t.down()
+    t.write('amor',False,'center',fonte1)
+    t.up()
+    t.goto(100,100)
+    fonte1=('calibri',28,'bold')
+    t.pencolor('gold')
+    t.down()
+    t.write('justiça',False,'center',fonte1)
+    t.up()
+    t.goto(-100,-100)
+    fonte1=('calibri',26,'bold')
+    t.pencolor('magenta')
+    t.down()
+    t.write('sonho',False,'center',fonte1)
+    t.up()
+    t.goto(50,50)
+    fonte1=('calibri',24,'bold')
+    t.pencolor('cyan')
+    t.down()
+    t.write('amizade',False,'center',fonte1)
+    t.up()
+    t.goto(-50,50)
+    fonte1=('calibri',22,'bold')
+    t.pencolor('pink')
+    t.down()
+    t.write('vida',False,'center',fonte1)
+    t.up()
+    t.goto(50,-50)
+    fonte1=('calibri',20,'bold')
+    t.pencolor('gray')
+    t.down()
+    t.write('felicidade',False,'center',fonte1)
+
+    
+vertical(t,'fé','brown',-200,200,32)
+vertical(t,'respeito','orange',200,200,32)
